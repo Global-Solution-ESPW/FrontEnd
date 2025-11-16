@@ -1,5 +1,5 @@
 // src/components/ProfilesHighlight.jsx
-import { mockProfiles } from "../data/mockProfiles";
+import { perfilSaude } from "../data/ProfileData";
 
 function Profiles() {
   return (
@@ -10,7 +10,7 @@ function Profiles() {
             Destaques da Comunidade
           </p>
           <div className="space-y-4">
-            {mockProfiles.map((profile) => (
+            {perfilSaude.map((profile) => (
               <article
                 key={profile.id}
                 className="flex gap-3 sm:gap-4 p-3 rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/80 hover:border-emerald-400 transition"
