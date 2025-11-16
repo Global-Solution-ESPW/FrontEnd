@@ -1,4 +1,3 @@
-// src/components/BenefitsSection.jsx
 function BenefitsSection() {
   return (
     <section

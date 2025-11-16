@@ -1,4 +1,3 @@
-// src/components/CTASection.jsx
 function Action() {
   return (
     <section

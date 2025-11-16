@@ -1,4 +1,3 @@
-// src/components/Hero.jsx
 function Hero() {
   return (
     <section

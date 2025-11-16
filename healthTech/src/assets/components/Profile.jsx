@@ -1,4 +1,3 @@
-// src/components/ProfilesHighlight.jsx
 import { perfilSaude } from "../data/ProfileData";
 
 function Profiles() {

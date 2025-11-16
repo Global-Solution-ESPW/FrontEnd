@@ -1,4 +1,3 @@
-// src/components/Header.jsx
 function Header({ darkMode, toggleDarkMode }) {
   return (
     <header className="border-b border-slate-200 dark:border-slate-800">
