@@ -1,46 +1,94 @@
-🏥 HealthShift
-Rede de Carreira para Profissionais da Saúde
-Global Solution — Futuro do Trabalho · 2º Semestre/2025
-Front-End Web Development · Web Dev
+# 🩺 HealthShift – Rede Profissional para Carreira na Área da Saúde (Front-End + Web Dev)
 
+**HealthShift** é uma plataforma web que simula uma rede de carreira inspirada no LinkedIn, porém exclusiva para profissionais da saúde, permitindo visualização de perfis, filtros inteligentes, modal detalhado, criação de perfis (simulação) e integração completa com uma base JSON local de 60 profissionais.
 
-📌 Sobre o Projeto
-
-O HealthShift é uma aplicação front-end desenvolvida para a Global Solution do 2º semestre, nas disciplinas:
+A solução foi desenvolvida para a Global Solution – Futuro do Trabalho (2º semestre/2025) nas disciplinas:
 
 Front-End Web Development
 
 Web Development
 
-A proposta é simular uma rede profissional inspirada no LinkedIn, porém focada exclusivamente em profissionais da área da saúde, alinhada ao tema Futuro do Trabalho.
+O foco é demonstrar como tecnologias modernas de interface, componentização e dados estruturados podem apoiar novas formas de trabalho, facilitando conexão, empregabilidade, bem-estar e evolução profissional na área da saúde.
 
-A aplicação consome uma base JSON local com 60 perfis de profissionais da saúde, oferecendo busca, filtros, modal de detalhes e um CTA realista para criação de perfil.
+---
 
-🎯 Objetivos Acadêmicos Atendidos
 
-✔ Consumo e renderização de dados via JSON local
-✔ Interface responsiva em React + Tailwind
-✔ Componentização completa da SPA
-✔ Cards no estilo LinkedIn
-✔ Modal dinâmico de perfil
-✔ Busca + filtros inteligentes (cidade, área, texto)
-✔ Modo claro/escuro
-✔ Mini formulário simulando criação de perfil
-✔ Navegação via scroll para seções específicas
+# 🚀 Tecnologias Utilizadas
 
-🖥️ Tecnologias Utilizadas
+React + Vite
 
-React (Vite)
-
-TailwindCSS
+TailwindCSS (modo escuro/claro via classe dark)
 
 JavaScript ES6+
 
-JSON local
+Dados estruturados em JSON local
 
-Node.js / NPM
+Componentização de interface
 
-📂 Estrutura do Projeto
+Hooks (useState, useEffect, useMemo)
+
+Scroll suave para seções
+
+Modal acessível e responsivo
+
+Formulário de criação de perfil (simulado)
+
+---
+
+# 🎯 Objetivo da Solução
+
+Profissionais da saúde enfrentam desafios de:
+
+dificuldade de encontrar vagas alinhadas ao propósito
+
+jornadas desgastantes
+
+falta de rede profissional estruturada
+
+pouca visibilidade de competências técnicas/soft skills
+
+O HealthShift foi projetado para:
+
+apresentar uma rede moderna de profissionais da saúde
+
+permitir busca e conexão personalizada
+
+exibir perfis completos, com formação, idiomas, habilidades e projetos
+
+simular criação de perfil dentro da plataforma
+
+oferecer uma interface inspirada no LinkedIn (clean, profissional, calming-blue)
+
+demonstrar domínio técnico das disciplinas de Front-End
+
+---
+
+# ⚙️ Arquitetura da Aplicação (Front-End SPA)
+        ┌───────────────────────────────────────┐
+        │                React SPA              │
+        │---------------------------------------│
+        │  Header (CTA + tema + criar perfil)   │
+        │  Hero (pitch + scroll CTA)            │
+        │  Profiles (cards + filtros + modal)   │
+        │  Benefits (por que HealthShift?)       │
+        │  Action (próximos passos da GS)       │
+        │  Footer                               │
+        └───────────────────────────────────────┘
+                       │
+                       ▼
+          ┌─────────────────────────────┐
+          │   ProfileData.js (JSON)     │
+          │  • 60 perfis completos      │
+          │  • Foto, cargo, cidade      │
+          │  • Habilidades, idiomas     │
+          │  • Experiência, formação    │
+          │  • Áreas de interesse       │
+          └─────────────────────────────┘
+
+---
+
+# 📄 Estrutura de Arquivos
+```
 /src
  ├── components/
  │    ├── Header.jsx
@@ -50,132 +98,178 @@ Node.js / NPM
  │    ├── Action.jsx
  │    └── Footer.jsx
  ├── data/
- │    └── ProfileData.js
+ │    └── ProfileData.js   ← 60 perfis completos (JSON local)
  ├── App.jsx
  ├── main.jsx
  └── index.css
+```
 
-🧱 Principais Funcionalidades
-🔹 Hero — Call to Action
+---
 
-Apresentação do conceito HealthShift
+# 👤 Perfis de Profissionais (JSON)
 
-Botão Explorar profissionais com scroll automático
+Os dados ficam em:
 
-Paleta calming blue (consistente com outras entregas da GS)
+src/data/ProfileData.js
 
-🔹 Cards de Profissionais
+## 🧩 Exemplos de campos disponíveis:
+{
+  "id": 1,
+  "nome": "Profissional Saúde 1",
+  "foto": "https://images.unsplash.com/photo-15359...",
+  "cargo": "Médico Clínico Geral",
+  "localizacao": "São Paulo/SP",
+  "area": "Hospitalar",
+  "resumo": "Atuação em ...",
+  "habilidadesTecnicas": ["UTI", "Emergência"],
+  "softSkills": ["Comunicação", "Empatia"],
+  "experiencias": [
+    {
+      "empresa": "Hospital Vida Plena",
+      "inicio": "2021-01",
+      "fim": "2024-06",
+      "descricao": "Atendimento multiprofissional..."
+    }
+  ],
+  "formacao": [
+    { "curso": "Medicina", "instituicao": "USP", "ano": 2020 }
+  ],
+  "certificacoes": ["ACLS", "BLS"],
+  "idiomas": [{ "idioma": "Inglês", "nivel": "Avançado" }],
+  "areaInteresses": ["Telemedicina", "Inovação em Saúde"]
+}
 
-Inspirados no LinkedIn:
+---
 
-foto real (Unsplash)
+# 🔎 Funcionalidades da Plataforma
+## ✔️ 1. Hero – Pitch e Call to Action
 
-nome + cargo
+Mensagem clara sobre o HealthShift
 
-cidade + área de atuação
+Estética calming blue (padrão GS 2º semestre)
 
-resumo técnico
+Botão Explorar profissionais (com scroll suave)
 
-habilidades técnicas (badges)
+## ✔️ 2. Lista de Profissionais (estilo LinkedIn)
 
-botões de ação (Conectar, Mensagem, Ver Perfil Completo)
+Cards com:
 
-🔹 Filtros + Busca
+Foto real (Unsplash)
 
-filtro por cidade
+Nome
 
-filtro por área de atuação
+Cargo
 
-busca por texto, cargo ou especialidade
+Localização
 
-Processados com useMemo() para performance ideal.
+Área de atuação
 
-🔹 Modal de Detalhes do Profissional
+Resumo
 
-Inclui:
+Hard Skills (badges)
 
-habilidades técnicas
+Botões:
 
-soft skills
+Conectar
 
-experiência
+Mensagem
 
-formação
+Ver perfil completo (modal)
 
-certificações
+## ✔️ 3. Filtros + Busca
 
-idiomas
+Buscar por nome, área, cargo ou termo
 
-áreas de interesse
+Filtrar por:
 
-Com botões funcionais via alert().
+Cidade
 
-🔹 Criação de Perfil (Simulação)
+Área de atuação
 
-No header: botão "Criar perfil HealthShift" abre um mini formulário.
+Renderização em tempo real com useMemo.
 
-🔹 Dark Mode
+## ✔️ 4. Modal de Perfil Completo
 
-Totalmente funcional via Tailwind (darkMode: "class").
+Exibe:
 
-▶️ Como Rodar o Projeto
-npm install
-npm run dev
+Habilidades técnicas
 
+Soft skills
 
-Abra em:
-http://localhost:5173
+Experiência
 
-📚 Base JSON (ProfileData.js)
+Formação
 
-A base contém 60 perfis diversos com:
+Certificações
 
-foto
+Idiomas
+
+Áreas de interesse
+
+Com botões de ação simulados.
+
+## ✔️ 5. Criação de Perfil (Simulada)
+
+Via botão no header:
+
+Abre mini-formulário
+
+Recebe:
 
 nome
 
 cargo
 
-área de atuação
-
 cidade
 
-habilidades técnicas
+Exibe alert() simulando criação
 
-soft skills
+## ✔️ 6. Modo Claro/Escuro
 
-certificações
+Alternância via botão
 
-idiomas
+Tailwind configurado com darkMode: "class"
 
-experiência
+Afeta toda a aplicação
 
-formação
+---
 
-projetos
+# 🖥️ Screens / Telas (Descrição)
 
-áreas de interesse
 
-Todos gerados automaticamente conforme os requisitos da GS.
+Hero — pitch e CTA
 
-🧪 Checklist antes da entrega
+Cards — grid estilo feed
 
- Dark mode funcionando
+Modal — perfil completo
 
- Scroll do CTA funcionando
+Formulário — criar perfil
 
- Cards renderizando todos os perfis
+Filtros — topo dos cards
 
- Modal abrindo e fechando normalmente
+Dark Mode — interface full invertida
 
- Filtros e busca operando
+---
 
- Formulário de criação abrindo no header
+```
+▶️ Como Executar o Projeto
+1️⃣ Instalar dependências
+npm install
 
- Responsividade em mobile e tablet
+2️⃣ Rodar servidor
+npm run dev
 
-👤 Autor
 
-Leandro Simoneli da Silva | 566539
-FIAP · Engenharia de Software
-Global Solution – 2º Semestre/2025
+Acessar em:
+
+http://localhost:5173
+```
+---
+
+# 🧩 Autor
+
+Leandro Simoneli da Silva
+RM 566539
+Engenharia de Software — FIAP
+Global Solution — 2º Semestre/2025
+Front-End Web Development · Web Dev
