@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Profiles from "./components/Profile";
 import Benefits from "./components/Benefits";
-import Action from "./components/Action";
 import Footer from "./components/Footer";
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
         <Hero />
         <Profiles />
         <Benefits />
-        <Action />
       </main>
       <Footer />
     </div>
